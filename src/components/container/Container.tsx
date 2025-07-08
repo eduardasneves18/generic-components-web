@@ -16,7 +16,7 @@ import LoginButton from '../button/LoginButton';
 import EditTransactionScreen from '../screen/EditTransactionScreen';
 import DeleteTransactionButton from "../button/DeleteTransactionButton";
 import FilterIconButton from "../button/FilterIconButton";
-import FilterComponent from '../filter/Filter';
+import FilterComponent from '../filter/filter';
 
 // import { useSelector, useDispatch } from "react-redux";
 // import { setTransaction, updateTransaction } from '../../store/transactionSlice';
