@@ -1,4 +1,6 @@
-# Steps to create a react library components to publish in npm
+# Como consumir esse projeto.
+
+# Orientações para criar uma biblioteca no npm
 
 ### Se ainda não iniciou o projeto, comece com:
 
