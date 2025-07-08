@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "declaration": true,                   // Gera arquivos de definição (.d.ts)
+    "esModuleInterop": true,               // Para permitir importações default em módulos ComamonJS
+    "strict": true,                        // Ativa o modo estrito do TypeScript
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
