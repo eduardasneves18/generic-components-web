@@ -1,5 +1,5 @@
 {
-  "name": "yes-bank-components",
+  "name": "generic-components-web",
   "version": "1.0.46",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

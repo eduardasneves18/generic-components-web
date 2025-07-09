@@ -5,14 +5,16 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Logo from "./Logo";
 import { HeaderProps } from "../../types/header/HeaderProps";
 
-const UserName: React.FC<{ userType: string }> = ({ userType }) => {
-  if (userType === "S") {
-    return <div className="yes-bank-header-user-name">Eduarda Silva Neves</div>;
-  }
-  return <div className="yes-bank-header-user-name"></div>;
-};
+const UserName: React.FC<{ name?: string }> = ({ name }) => (
+  <div className="yes-bank-header-user-name">{name ?? ""}</div>
+);
 
-const Header: React.FC<HeaderProps> = ({ user, type }) => {
+const Header: React.FC<HeaderProps> = ({
+  user,
+  type,
+  userName,
+  appTitlePrimary,
+}) => {
   if (!user || !type) {
     console.error("Missing required props: user or type");
     return null;
@@ -20,8 +22,11 @@ const Header: React.FC<HeaderProps> = ({ user, type }) => {
 
   const renderHeaderContent = () => (
     <>
-      <Logo />
-      <UserName userType={user} />
+      <Logo
+        link="/"
+        appTitlePrimary={appTitlePrimary}
+      />
+      <UserName name={userName} />
       <div>
         <a href="/user" className="yes-bank-header-link">
           <FontAwesomeIcon icon={faUser} />
@@ -30,12 +35,7 @@ const Header: React.FC<HeaderProps> = ({ user, type }) => {
     </>
   );
 
-  switch (type) {
-    case "user":
-      return <header className="yes-bank-header">{renderHeaderContent()}</header>;
-    default:
-      return <header className="yes-bank-header">{renderHeaderContent()}</header>;
-  }
+  return <header className="yes-bank-header">{renderHeaderContent()}</header>;
 };
 
 export default Header;
