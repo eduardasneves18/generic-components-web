@@ -1,12 +1,12 @@
 {
   "name": "generic-components-web",
   "version": "1.0.46",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": ["dist"],
   "scripts": {
-    "build": "tsup && tsc && webpack --mode production",
+    "build": "tsup",
     "prepare": "npm run build",
     "test": "react-scripts test"
   },
