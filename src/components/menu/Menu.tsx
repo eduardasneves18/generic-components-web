@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Menu.css";
+import { Link, LinkProps } from 'react-router-dom';
 
 type MenuItem = {
   label: string;
@@ -8,20 +9,19 @@ type MenuItem = {
 
 type MenuProps = {
   items: MenuItem[];
-  LinkComponent?: React.ComponentType<{ to: string; children: React.ReactNode; className?: string }>;
+  LinkComponent: React.ComponentType<LinkProps>;
 };
 
 const MenuItens: React.FC<MenuProps> = ({ items, LinkComponent }) => {
   return (
     <ul className="itens-menu-lateral">
       {items.map((item, index) => {
-        const LinkTag = LinkComponent ?? DefaultLink;
         return (
           <React.Fragment key={index}>
             <li>
-              <LinkTag to={item.path} className="item">
-                {item.label}
-              </LinkTag>
+              <LinkComponent to={item.path}>
+                <a className="item">{item.label}</a>
+              </LinkComponent>
             </li>
             {index < items.length - 1 && <hr />}
           </React.Fragment>
@@ -30,10 +30,6 @@ const MenuItens: React.FC<MenuProps> = ({ items, LinkComponent }) => {
     </ul>
   );
 };
-
-const DefaultLink: React.FC<{ to: string; children: React.ReactNode; className?: string }> = ({ to, children, className }) => (
-  <a href={to} className={className}>{children}</a>
-);
 
 const Menu: React.FC<MenuProps> = (props) => {
   return (
