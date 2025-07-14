@@ -8,27 +8,37 @@ type MenuItem = {
 
 type MenuProps = {
   items: MenuItem[];
+  LinkComponent?: React.ComponentType<{ to: string; children: React.ReactNode; className?: string }>;
 };
 
-const MenuItens: React.FC<MenuProps> = ({ items }) => {
+const MenuItens: React.FC<MenuProps> = ({ items, LinkComponent }) => {
   return (
     <ul className="itens-menu-lateral">
-      {items.map((item, index) => (
-        <React.Fragment key={index}>
-          <li>
-            <a className="item" href={item.path}>{item.label}</a>
-          </li>
-          {index < items.length - 1 && <hr />}
-        </React.Fragment>
-      ))}
+      {items.map((item, index) => {
+        const LinkTag = LinkComponent ?? DefaultLink;
+        return (
+          <React.Fragment key={index}>
+            <li>
+              <LinkTag to={item.path} className="item">
+                {item.label}
+              </LinkTag>
+            </li>
+            {index < items.length - 1 && <hr />}
+          </React.Fragment>
+        );
+      })}
     </ul>
   );
 };
 
-const Menu: React.FC<MenuProps> = ({ items }) => {
+const DefaultLink: React.FC<{ to: string; children: React.ReactNode; className?: string }> = ({ to, children, className }) => (
+  <a href={to} className={className}>{children}</a>
+);
+
+const Menu: React.FC<MenuProps> = (props) => {
   return (
     <div className="lateral-diminuido">
-      <MenuItens items={items} />
+      <MenuItens {...props} />
     </div>
   );
 };
