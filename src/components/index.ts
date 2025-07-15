@@ -12,6 +12,7 @@ import Dashboard from "./dashboard/Dashboard";
 import Button from './button/Button';
 import LoginButton from './button/LoginButton';
 import FilterIconButton from "./button/FilterIconButton";
+import NextLinkWrapper from "./nextLink/nextLinkWrapper";
 
 export {
   AttachmentField,
@@ -28,4 +29,5 @@ export {
   Button,
   LoginButton,
   FilterIconButton,
+  NextLinkWrapper
 };

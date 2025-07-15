@@ -6,7 +6,7 @@ type LinkPropsExtended = LinkProps & {
   className?: string;
 };
 
-export const NextLinkWrapper = React.forwardRef<HTMLAnchorElement, LinkPropsExtended>(
+const NextLinkWrapper = React.forwardRef<HTMLAnchorElement, LinkPropsExtended>(
   ({ children, className, ...props }, ref) => (
     <NextLink {...props} passHref legacyBehavior>
       <a ref={ref} className={className}>
@@ -17,3 +17,4 @@ export const NextLinkWrapper = React.forwardRef<HTMLAnchorElement, LinkPropsExte
 );
 
 NextLinkWrapper.displayName = 'NextLinkWrapper';
+export default NextLinkWrapper
