@@ -7,24 +7,22 @@ export type MenuItem = {
 
 export type MenuProps = {
   items: MenuItem[];
-  LinkComponent: React.ComponentType<{ to: string; children: React.ReactNode; className?: string }>;
+  LinkComponent: React.ComponentType<{ href: string; children: React.ReactNode; className?: string }>;
 };
 
-const Menu: React.FC<MenuProps> = ({ items, LinkComponent }) => {
-  return (
-    <ul className="itens-menu-lateral">
-      {items.map((item, index) => (
-        <React.Fragment key={item.path}>
-          <li>
-            <LinkComponent to={item.path} className="item">
-              {item.label}
-            </LinkComponent>
-          </li>
-          {index < items.length - 1 && <hr />}
-        </React.Fragment>
-      ))}
-    </ul>
-  );
-};
+const Menu: React.FC<MenuProps> = ({ items, LinkComponent }) => (
+  <ul className="itens-menu-lateral">
+    {items.map((item) => (
+      <React.Fragment key={item.path}>
+        <li>
+          <LinkComponent href={item.path} className="item">
+            {item.label}
+          </LinkComponent>
+        </li>
+        {item !== items[items.length - 1] && <hr />}
+      </React.Fragment>
+    ))}
+  </ul>
+);
 
 export default Menu;
