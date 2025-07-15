@@ -1,37 +1,48 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import "./Menu.css";
+import React from "react";
+//import "./Header.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import Logo from "./Logo";
+import { HeaderProps } from "../../types/header/HeaderProps";
 
-type MenuItem = {
-  label: string;
-  path: string;
-};
+const UserName: React.FC<{ name?: string }> = ({ name }) => (
+  <div className="yes-bank-header-user-name">{name ?? ""}</div>
+);
 
-type MenuProps = {
-  items: MenuItem[];
-};
 
-const MenuItens: React.FC<MenuProps> = ({ items }) => {
-  return (
-    <ul className="itens-menu-lateral">
-      {items.map((item, index) => (
-        <React.Fragment key={index}>
-          <li>
-            <Link className="item" to={item.path}>{item.label}</Link>
-          </li>
-          {index < items.length - 1 && <hr />}
-        </React.Fragment>
-      ))}
-    </ul>
+const Header: React.FC<HeaderProps> = ({
+  user,
+  type,
+  userName,
+  appTitlePrimary,
+}) => {
+  if (!user || !type) {
+    console.error("Missing required props: user or type");
+    return null;
+  }
+
+  const renderHeaderContent = () => (
+    <>
+      <Logo
+        link="/"
+        appTitlePrimary={appTitlePrimary}
+      />
+      <UserName name={userName} />
+      <div>
+        <a href="/user" className="yes-bank-header-link">
+          <FontAwesomeIcon icon={faUser} />
+        </a>
+      </div>
+    </>
   );
+
+
+  return <header className="yes-bank-header">{renderHeaderContent()}</header>;
+
+
+
+
+
 };
 
-const Menu: React.FC<MenuProps> = ({ items }) => {
-  return (
-    <div className="lateral-diminuido">
-      <MenuItens items={items} />
-    </div>
-  );
-};
-
-export default Menu;
+export default Header;

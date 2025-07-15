@@ -11,12 +11,8 @@ import {
   Modal,
   Dashboard,
   Button,
-  InsertTransactionButton,
   LoginButton,
-  EditTransactionScreen,
-  DeleteTransactionButton,
   FilterIconButton,
-  ContainerComponent,
 } from "./components";
 
 
@@ -33,10 +29,6 @@ export {
   Modal,
   Dashboard,
   Button,
-  InsertTransactionButton,
   LoginButton,
-  EditTransactionScreen,
-  DeleteTransactionButton,
   FilterIconButton,
-  ContainerComponent,
 };
