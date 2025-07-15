@@ -13,6 +13,7 @@ import {
   Button,
   LoginButton,
   FilterIconButton,
+  NextLinkWrapper,
 } from "./components";
 
 
@@ -31,4 +32,5 @@ export {
   Button,
   LoginButton,
   FilterIconButton,
+  NextLinkWrapper
 };
