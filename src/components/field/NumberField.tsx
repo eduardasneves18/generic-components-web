@@ -1,5 +1,4 @@
 import React from 'react';
-import './Field.css';
 import { FieldProps } from "../../types/field/FieldProps";
 
 const NumberField: React.FC<FieldProps> = ({ id, className, value=0.00 ,label, placeholder, onChange }) => (

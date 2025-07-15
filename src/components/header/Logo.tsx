@@ -1,5 +1,4 @@
 import React from 'react';
-import "./Header.css";
 import { LogoProps } from '../../types/header/LogoProps';
 
 const Logo: React.FC<LogoProps> = ({

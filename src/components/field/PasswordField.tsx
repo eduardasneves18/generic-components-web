@@ -1,5 +1,4 @@
 import React from 'react';
-import './Field.css';
 import { FieldProps } from "../../types/field/FieldProps";
 
 const PasswordField: React.FC<FieldProps> = ({ id, className, label, placeholder, value, onChange }) => (
