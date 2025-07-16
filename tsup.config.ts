@@ -1,28 +1,45 @@
-import { defineConfig } from 'tsup'
-import { globSync } from 'glob'
-import path from 'path'
+const path = require('path');
+const nodeExternals = require('webpack-node-externals');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-export default defineConfig({
-  entry: [
-    'src/index.ts',
-    'src/style/components.css'
-  ],
-  format: ['esm', 'cjs'],
-  dts: {
-    entry: Object.fromEntries(
-      globSync('src/**/*.{ts,tsx}').map(file => [
-        path.relative('src', file).replace(/\.(ts|tsx)$/, ''),
-        path.resolve(file)
-      ])
-    )
+module.exports = {
+  entry: './src/index.ts', // Entry file for your component library
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
+    library: 'YesBankComponents', // You can change the name
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+    clean: true,
   },
-  minify: true,
-  sourcemap: true,
-  clean: true,
-  splitting: false,
-  bundle: true,
-  external: ['react', 'react-dom'],
-  loader: {
-    '.css': 'copy'
-  }
-})
+  externals: [
+    nodeExternals(), // ignore node_modules
+    {
+      react: 'react',
+      'react-dom': 'react-dom',
+    },
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'], // Extract and bundle CSS
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.css'],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'styles.css', // This is your bundled CSS file
+    }),
+  ],
+  devtool: 'source-map',
+  mode: 'production', // Add this for production-ready output
+};
