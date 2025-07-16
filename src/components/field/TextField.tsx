@@ -1,5 +1,6 @@
 import React from 'react';
 import { FieldProps } from "../../types/field/FieldProps";
+import './Field.css';
 
 const TextField: React.FC<FieldProps> = ({ id, className, label, placeholder, value, onChange }) => (
   <div className={`fields ${className}`}>
