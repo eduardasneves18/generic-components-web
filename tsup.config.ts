@@ -5,7 +5,7 @@ import path from 'path'
 export default defineConfig({
   entry: [
     'src/index.ts',
-    ...globSync('src/**/*.css')
+    'src/style/components.css'
   ],
   format: ['esm', 'cjs'],
   dts: {
