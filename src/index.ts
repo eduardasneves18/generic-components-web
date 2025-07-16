@@ -1,4 +1,4 @@
-import './style/components.global.css';
+// import './style/components.global.css';
 
 import {
   AttachmentField,
