@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "tsc && webpack --mode production",
     "prepare": "npm run build",
     "test": "react-scripts test"
   },
