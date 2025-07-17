@@ -23,18 +23,12 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)$/, // TypeScript and TSX rules
-        sideEffects: true,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
       {
         test: /\.css$/,  // Process CSS files
-        use: [MiniCssExtractPlugin.loader, {
-            loader: 'css-loader',
-            options: {
-              modules: true, // ✅ Disable CSS Modules
-            },
-          },],  // Inject CSS into JS bundle
+        use: [MiniCssExtractPlugin.loader,  'css-loader'],  // Inject CSS into JS bundle
       },
     ],
   },
