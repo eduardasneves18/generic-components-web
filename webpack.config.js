@@ -10,7 +10,6 @@ module.exports = {
     library: 'GenericComponentsWeb',
     libraryTarget: 'umd',
     umdNamedDefine: true,
-    clean: true,
   },
   externals: [
       nodeExternals(),
@@ -24,6 +23,7 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)$/, // TypeScript and TSX rules
+        sideEffects: true,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
@@ -32,7 +32,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, {
             loader: 'css-loader',
             options: {
-              modules: false, // ✅ Disable CSS Modules
+              modules: true, // ✅ Disable CSS Modules
             },
           },],  // Inject CSS into JS bundle
       },
