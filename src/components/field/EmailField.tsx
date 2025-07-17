@@ -1,8 +1,6 @@
 import React from 'react';
  
 import { FieldProps } from "../../types/field/FieldProps";
-import './Field.css';
-
 
 const EmailField: React.FC<FieldProps> = ({ id, className, label, placeholder, value, onChange }) => (
   <div className={`fields ${className}`}>

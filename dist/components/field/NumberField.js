@@ -1,5 +1,4 @@
 import React from 'react';
-import './Field.css';
 var NumberField = function (_a) {
     var id = _a.id, className = _a.className, _b = _a.value, value = _b === void 0 ? 0.00 : _b, label = _a.label, placeholder = _a.placeholder, onChange = _a.onChange;
     return (React.createElement("div", { className: "fields ".concat(className) },

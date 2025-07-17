@@ -35,7 +35,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import React, { useState } from "react";
-import './Field.css';
 var AttachmentField = function (_a) {
     var urlUpload = _a.urlUpload, onChange = _a.onChange;
     var _b = useState(null), file = _b[0], setFile = _b[1];

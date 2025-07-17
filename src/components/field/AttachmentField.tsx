@@ -1,7 +1,6 @@
 import React, { useState } from "react";
  
 import { AttachmentFieldProps } from "../../types/field/AttachmenFieldProps";
-import './Field.css';
 
 const AttachmentField:React.FC<AttachmentFieldProps> = ({ urlUpload, onChange }) => {
   const [file, setFile] = useState<FileList | null>(null);

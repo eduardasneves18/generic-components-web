@@ -3,7 +3,6 @@ import { FilterProps } from '../../types/filter/FilterProps';
 import TextField from '../field/TextField';
 import LookupField from '../field/LookupField';
 import Button from '../button/Button';
-import './Filter.css';
 
 const FilterComponent: React.FC<FilterProps> = ({ showFilter, okClick }) => {
     if (!showFilter) return null;

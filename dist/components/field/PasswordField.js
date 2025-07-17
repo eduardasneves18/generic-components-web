@@ -1,5 +1,4 @@
 import React from 'react';
-import './Field.css';
 var PasswordField = function (_a) {
     var id = _a.id, className = _a.className, label = _a.label, placeholder = _a.placeholder, value = _a.value, onChange = _a.onChange;
     return (React.createElement("div", { className: "fields ".concat(className) },

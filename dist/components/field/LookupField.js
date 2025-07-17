@@ -1,5 +1,4 @@
 import React from 'react';
-import './Field.css';
 var LookupField = function (_a) {
     var id = _a.id, value = _a.value, className = _a.className, label = _a.label, options = _a.options, onChange = _a.onChange;
     return (React.createElement("div", { className: "fields ".concat(className) },

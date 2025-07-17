@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import TextField from '../field/TextField';
 import LookupField from '../field/LookupField';
 import Button from '../button/Button';
-import './Filter.css';
 var FilterComponent = function (_a) {
     var showFilter = _a.showFilter, okClick = _a.okClick;
     if (!showFilter)

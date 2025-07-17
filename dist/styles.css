@@ -1,166 +1,3 @@
-.fields {
-  display: flex;
-  flex-direction: column;
-  gap: 1vh;
-} 
-
-input {
-  padding: 1%;
-  padding-left: 10px;
-}
-
-.input {
-  color: #fff;
-  border: 0.5px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #0a0a0a;
-  border-radius: 5px;
-  background-color: transparent;
-  height: 3vh;
-}
-
-input::placeholder {
-  color: #fff;
-}
-
-.select {
-  color: #fff;
-  border: 0.5px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #0a0a0a;
-  border-radius: 5px;
-  background-color: transparent;
-  height: 3.8vh;
-}
-
-select {
-  padding: 1%;
-  padding-left: 10px;
-}
-.yes-bank-header {
-  background-color: rgb(0, 0, 0);
-  background: linear-gradient(#1d1d1d, #000000);
-  display: grid;
-  grid-template-columns: 68% 21% 5%;
-  grid-template-rows: 100%;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.19);
-  align-items: center;
-  padding: 1%;
-  gap: 3%;
-}
-
-.yes-bank-header-link {
-  font-size: 3.5vh; /* Usar uma unidade relativa para a fonte */
-  display: flex; /* Usar flexbox para garantir que as palavras fiquem lado a lado */
-  align-items: center; /* Alinha as palavras verticalmente */
-}
-
-.yes-bank-header-yes,
-.yes-bank-header-bank {
-  padding-top: 1vh; 
-  padding-bottom: 1vh; 
-  color: inherit; /* Garantir que as cores sejam herdadas */
-}
-
-.yes-bank-header-yes {
-  color: #FDC602; /* Cor de 'Yes' */
-  margin-right: 0; /* Remover qualquer margem direita, para não ter espaçamento entre as palavras */
-}
-
-.yes-bank-header-bank {
-  color: #ffffff; /* Cor de 'Bank' */
-  margin-left: 0; /* Remover qualquer margem esquerda */
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .yes-bank-header {
-      grid-template-rows: 1fr; /* Coloca os itens em uma única coluna */
-      text-align: center; /* Centraliza o texto */
-  }
-
-  .yes-bank-header-link {
-      font-size: 5vw; /* Reduz o tamanho da fonte em telas menores */
-  }
-}
-
-.yes-bank-header-items {
-  padding: 1vh;
-  border: 1px;
-  border-radius: 10%;
-  border-color: rgb(203, 203, 203);
-  color: rgb(119, 119, 119);
-  display: flex;
-}
-
-.yes-bank-header-icone {
-  padding: 1vh;
-  border: 1px;
-  border-radius: 10%;
-  border-color: rgb(203, 203, 203);
-  color: rgb(119, 119, 119);
-  display: flex;
-}
-
-.yes-bank-header-user-name {  
-  font-size: 90%;
-  color: rgb(255, 255, 255);
-  display: flex;
-  justify-content: flex-end;
-}
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.modal {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 10%; 
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal .modal-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.modal .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.modal.success {
-  border-left: 5px solid green;
-}
-
-.modal.error {
-  border-left: 5px solid red;
-}
-.dashboard {
-  color: rgb(255, 255, 255);
-  background:linear-gradient(#1b1b1b, #202020, #313131, #666666);
-  padding:1%;
-}
 .primary {
   background-color: #004D61;
   color: #ffff;
@@ -251,5 +88,205 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
   box-sizing: content-box;
   color: #a7a7a7;
 }
+.dashboard {
+  color: rgb(255, 255, 255);
+  background:linear-gradient(#1b1b1b, #202020, #313131, #666666);
+  padding:1%;
+}
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+} 
+
+input {
+  padding: 1%;
+  padding-left: 10px;
+}
+
+.input {
+  color: #fff;
+  border: 0.5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #0a0a0a;
+  border-radius: 5px;
+  background-color: transparent;
+  height: 3vh;
+}
+
+input::placeholder {
+  color: #fff;
+}
+
+.select {
+  color: #fff;
+  border: 0.5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #0a0a0a;
+  border-radius: 5px;
+  background-color: transparent;
+  height: 3.8vh;
+}
+
+select {
+  padding: 1%;
+  padding-left: 10px;
+}
+.modal-filter {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.button-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+.yes-bank-header {
+  background-color: rgb(0, 0, 0);
+  background: linear-gradient(#1d1d1d, #000000);
+  display: grid;
+  grid-template-columns: 68% 21% 5%;
+  grid-template-rows: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.19);
+  align-items: center;
+  padding: 1%;
+  gap: 3%;
+}
+
+.yes-bank-header-link {
+  font-size: 3.5vh; /* Usar uma unidade relativa para a fonte */
+  display: flex; /* Usar flexbox para garantir que as palavras fiquem lado a lado */
+  align-items: center; /* Alinha as palavras verticalmente */
+}
+
+.yes-bank-header-yes,
+.yes-bank-header-bank {
+  padding-top: 1vh; 
+  padding-bottom: 1vh; 
+  color: inherit; /* Garantir que as cores sejam herdadas */
+}
+
+.yes-bank-header-yes {
+  color: #FDC602; /* Cor de 'Yes' */
+  margin-right: 0; /* Remover qualquer margem direita, para não ter espaçamento entre as palavras */
+}
+
+.yes-bank-header-bank {
+  color: #ffffff; /* Cor de 'Bank' */
+  margin-left: 0; /* Remover qualquer margem esquerda */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .yes-bank-header {
+      grid-template-rows: 1fr; /* Coloca os itens em uma única coluna */
+      text-align: center; /* Centraliza o texto */
+  }
+
+  .yes-bank-header-link {
+      font-size: 5vw; /* Reduz o tamanho da fonte em telas menores */
+  }
+}
+
+.yes-bank-header-items {
+  padding: 1vh;
+  border: 1px;
+  border-radius: 10%;
+  border-color: rgb(203, 203, 203);
+  color: rgb(119, 119, 119);
+  display: flex;
+}
+
+.yes-bank-header-icone {
+  padding: 1vh;
+  border: 1px;
+  border-radius: 10%;
+  border-color: rgb(203, 203, 203);
+  color: rgb(119, 119, 119);
+  display: flex;
+}
+
+.yes-bank-header-user-name {  
+  font-size: 90%;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: flex-end;
+}
+ul {
+  list-style-type: none;
+}
+
+.itens-menu-lateral {
+  padding: 1vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%; 
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal.success {
+  border-left: 5px solid green;
+}
+
+.modal.error {
+  border-left: 5px solid red;
+}
+
 
 /*# sourceMappingURL=styles.css.map*/
