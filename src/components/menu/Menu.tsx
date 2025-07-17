@@ -10,7 +10,7 @@ export type MenuItem = {
 export type MenuProps = {
   items: MenuItem[];
 };
- 
+
 const Menu: React.FC<MenuProps> = ({ items }) => (
   <ul className="itens-menu-lateral">
     {items.map((item) => (
