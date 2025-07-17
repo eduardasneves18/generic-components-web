@@ -10,6 +10,7 @@ module.exports = {
     library: 'GenericComponentsWeb',
     libraryTarget: 'umd',
     umdNamedDefine: true,
+    clean: true,
   },
   externals: [
       nodeExternals(),
@@ -28,7 +29,12 @@ module.exports = {
       },
       {
         test: /\.css$/,  // Process CSS files
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],  // Inject CSS into JS bundle
+        use: [MiniCssExtractPlugin.loader, {
+            loader: 'css-loader',
+            options: {
+              modules: false, // ✅ Disable CSS Modules
+            },
+          },],  // Inject CSS into JS bundle
       },
     ],
   },
