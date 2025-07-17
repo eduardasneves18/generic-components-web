@@ -1,4 +1,6 @@
+// Menu.tsx
 import React from 'react';
+import Link from 'next/link';
 
 export type MenuItem = {
   label: string;
@@ -7,17 +9,16 @@ export type MenuItem = {
 
 export type MenuProps = {
   items: MenuItem[];
-  LinkComponent: React.ComponentType<{ href: string; children: React.ReactNode; className?: string }>;
 };
-
-const Menu: React.FC<MenuProps> = ({ items, LinkComponent }) => (
+ 
+const Menu: React.FC<MenuProps> = ({ items }) => (
   <ul className="itens-menu-lateral">
     {items.map((item) => (
       <React.Fragment key={item.path}>
         <li>
-          <LinkComponent href={item.path} className="item">
-            {item.label}
-          </LinkComponent>
+          <Link href={item.path} passHref legacyBehavior>
+            <a className="item">{item.label}</a>
+          </Link>
         </li>
         {item !== items[items.length - 1] && <hr />}
       </React.Fragment>
